@@ -28,7 +28,7 @@ total_chunks = sum(1 for _ in pd.read_csv(
     parse_dates=['Date received', 'Date sent to company']
 ))
 
-print("🔄 Cleaning data in chunks and writing to output file...")
+print(" Cleaning data in chunks and writing to output file...")
 for i, chunk in enumerate(tqdm(pd.read_csv(
     input_path,
     chunksize=chunk_size,
@@ -66,4 +66,4 @@ for i, chunk in enumerate(tqdm(pd.read_csv(
     header = i == 0
     chunk.to_csv(output_path, mode=mode, index=False, header=header)
 
-print(f"✅ Finished cleaning and saved to: {output_path}")
+print(f" Finished cleaning and saved to: {output_path}")

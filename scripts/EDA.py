@@ -35,7 +35,7 @@ issue_counts = Counter()
 year_counts = Counter()
 
 # === CHUNKED PROCESSING ===
-print("\n🔍 Processing dataset in chunks...")
+print("\n Processing dataset in chunks...")
 for chunk in tqdm(pd.read_csv(file_path, chunksize=chunk_size, dtype=dtype_mapping,
                               parse_dates=['Date received', 'Date sent to company'],
                               low_memory=False), desc="Processing Chunks"):
@@ -140,5 +140,5 @@ plt.title("Top 10 Most Frequent Issues")
 plt.tight_layout()
 save_plot(fig, "top_10_issues.png")
 
-print("\n✅ EDA script complete. Outputs saved to 'figures/' and 'summary/' folders.")
+print("\n EDA script complete. Outputs saved to 'figures/' and 'summary/' folders.")
 input("Press ENTER to close the script...")
